@@ -1,3 +1,5 @@
 npm i express body-parser mongoose cors morgan express-jwt firebase-admin jsonwebtoken nodemon dotenv 
 
 npm i slugify
+
+npm install cloudinary
