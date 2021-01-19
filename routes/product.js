@@ -5,13 +5,26 @@ const router = express.Router();
 const { authCheck, adminCheck } = require("../middlewares/auth");
 
 //  controllers
-const { create, listAll, remove, read } = require("../controllers/product"); //importing from controllers
+const {
+  create,
+  listAll,
+  remove,
+  read,
+  update,
+  list,
+  productsCount,
+} = require("../controllers/product"); //importing from controllers
 
 // routes - admin operations
 router.post("/product", authCheck, adminCheck, create);
+router.get("/products/total", productsCount);
 router.get("/products/:count", listAll);
 router.delete("/product/:slug", authCheck, adminCheck, remove);
 router.get("/product/:slug", read);
+router.put("/product/:slug", authCheck, adminCheck, update);
+
+router.post("/products", list);
+
 module.exports = router;
 
 // middlewares run before controllers function
