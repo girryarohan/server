@@ -9,6 +9,6 @@ const { upload, remove } = require("../controllers/cloudinary"); //importing fro
 
 // routes - admin operations
 router.post("/uploadimages", authCheck, adminCheck, upload);
-router.delete("/removeimage", authCheck, adminCheck, remove);
+router.post("/removeimage", authCheck, adminCheck, remove);
 
 module.exports = router;
