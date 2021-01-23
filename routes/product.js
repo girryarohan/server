@@ -13,6 +13,9 @@ const {
   update,
   list,
   productsCount,
+  productStar,
+  listRelated,
+  searchFilters,
 } = require("../controllers/product"); //importing from controllers
 
 // routes - admin operations
@@ -24,7 +27,13 @@ router.get("/product/:slug", read);
 router.put("/product/:slug", authCheck, adminCheck, update);
 
 router.post("/products", list);
+// rating
+router.put("/product/star/:productId", authCheck, productStar);
+// related products
+router.get("/product/related/:productId", listRelated);
 
+// search
+router.post("/search/filters", searchFilters);
 module.exports = router;
 
 // middlewares run before controllers function
