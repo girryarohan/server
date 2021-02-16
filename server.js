@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const { readdirSync } = require("fs");
 require("dotenv").config();
-const connectionURL = "" + process.env.DATABASE;
+const connectionURL = "" + process.env.DATABASE + "";
 // app
 const app = express();
 console.log(connectionURL);
