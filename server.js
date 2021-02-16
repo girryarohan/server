@@ -4,10 +4,8 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { readdirSync } = require("fs");
-const dotenv = require("dotenv");
-
-dotenv.config();
-const connectionURL = "mongodb://localhost:27017/ecom";
+require("dotenv").config();
+const connectionURL = process.env.DATABASE;
 // app
 const app = express();
 console.log(connectionURL);
