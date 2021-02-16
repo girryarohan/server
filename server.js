@@ -4,14 +4,16 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { readdirSync } = require("fs");
-require("dotenv").config();
+const dotenv = require("dotenv");
 
+dotenv.config();
+const connectionURL = "mongodb://localhost:27017/ecom";
 // app
 const app = express();
-
+console.log(connectionURL);
 // db
 mongoose
-  .connect(process.env.DATABASE, {
+  .connect(connectionURL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
