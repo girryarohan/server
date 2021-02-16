@@ -4,8 +4,10 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { readdirSync } = require("fs");
-require("dotenv").config();
-const connectionURL = "" + process.env.DATABASE + "";
+// require("dotenv").config();
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
+const connectionURL = process.env.DATABASE;
 // app
 const app = express();
 console.log(connectionURL);
