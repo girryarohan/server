@@ -3,7 +3,8 @@ const Product = require("../models/product");
 const Cart = require("../models/cart");
 const Coupon = require("../models/coupon");
 const Order = require("../models/order");
-const uniqueid = require("uniqueid");
+const uniqueId = require("lodash.uniqueid");
+
 exports.userCart = async (req, res) => {
   const { cart } = req.body;
 
@@ -198,10 +199,11 @@ exports.createCashOrder = async (req, res) => {
   } else {
     finalAmount = userCart.cartTotal * 100;
   }
+  let curDate = Date.now();
   let newOrder = await new Order({
     products: userCart.products,
     paymentIntent: {
-      id: uniqueid(),
+      id: uniqueId(`oid-${curDate}-${user._id}`),
       amount: finalAmount,
       currency: "inr",
       status: "Cash On Delivery",
