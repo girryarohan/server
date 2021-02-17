@@ -5,12 +5,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const { readdirSync } = require("fs");
 require("dotenv").config();
-// const path = require("path");
-// require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
-const connectionURL = "mongodb://localhost:27017/ecom";
+
 // app
 const app = express();
-console.log(connectionURL);
+
 // db
 mongoose
   .connect(process.env.DATABASE, {
