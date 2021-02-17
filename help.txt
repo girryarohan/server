@@ -4,3 +4,8 @@ npm i slugify
 
 npm install cloudinary
 npm i stripe
+
+mongo "mongodb+srv://cluster0.0t0fr.mongodb.net/ecomin" --username admin-ecomin
+mongodb+srv://admin-ecomin:<password>@cluster0.0t0fr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+mongodb+srv://admin-ecomin:ppp009@cluster0.0t0fr.mongodb.net/ecomin?retryWrites=true&w=majority
