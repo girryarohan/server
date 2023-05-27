@@ -1,5 +1,5 @@
 var admin = require("firebase-admin");
-
+// using firebase 8
 var serviceAccount = require("../config/fbServiceAccountKey.json");
 
 admin.initializeApp({

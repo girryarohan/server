@@ -3,6 +3,7 @@ const Cart = require("../models/cart");
 const Product = require("../models/product");
 const Coupon = require("../models/coupon");
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
+//Updated Stripe secret - set girryarohan repo
 
 exports.createPaymentIntent = async (req, res) => {
   // console.log(req.body);
